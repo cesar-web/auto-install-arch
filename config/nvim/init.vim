@@ -23,31 +23,12 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
-" Light line color scheme
-let g:lightline={'colorscheme':'gruvbox',}
-
-" Nerd commenter settings
-nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDAltDelims_java = 1
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-let g:NERDToggleCheckAllLines = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
-" Undo tree settings
-nnoremap <leader>u :UndotreeToggle<cr><C-w>l
-let g:undotree_WindowLayout = 4
-let g:undotree_SplitWidth = 45
-
 syntax on
 filetype plugin on " required for nerdcommenter
 set filetype=on " file detection
 set noerrorbells " no sounds
 set hidden " keeps files in buffer
-set timeoutlen=250 " time before <leader> original function is executed
+set timeoutlen=0 " time before <leader> original function is executed
 
 " Colors
 colorscheme gruvbox
@@ -111,13 +92,11 @@ nnoremap <Leader>tp :set paste!<CR>
 nnoremap <Leader>ts :set spell!<CR>
 nnoremap <Leader>tw :set wrap!<CR>:set linebreak!<CR>
 nnoremap <Leader>tg :Goyo<CR>
+nnoremap <Leader>tj :set paste!<CR>:set spell!<CR>:set wrap!<CR>:set linebreak!<CR>:Goyo<CR>
 
 " Insert
 nnoremap <leader>id i<C-R>=strftime("%a %b %d %Y")<CR><ESC>
 nnoremap <leader>il iLorem ipsum dolor sit amet, consectetur adipiscing elit<ESC>
-
-" Accidental key press
-vnoremap ; :
 
 " Quick line jumps
 nnoremap H ^
@@ -164,11 +143,6 @@ vnoremap <C-k> :m'<-2<CR>gv=gv
 nnoremap <C-j> :m.+1<CR>==
 nnoremap <C-k> :m.-2<CR>==
 
-" Anyfold settings
-nnoremap <leader>o za
-set foldlevel=99
-autocmd Filetype * AnyFoldActivate
-
 " Manage splits
 nnoremap <leader>wv :vsp<CR>
 nnoremap <leader>wb :vsp<CR>
@@ -191,43 +165,29 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Remove trailing white space when saving
-autocmd BufWritePre * %s/\s\+$//e
+" Anyfold settings
+nnoremap <leader>o za
+set foldlevel=99
+autocmd Filetype * AnyFoldActivate
 
-" coc tab to auto complete
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
+" Light line color scheme
+let g:lightline={'colorscheme':'gruvbox',}
 
-" coc tab to select next autocomplete
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" Nerd commenter settings
+nnoremap <silent> <leader>ft :NERDTreeToggle<CR>
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDAltDelims_java = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 
-" coc use CTRL+Space to trigger completion
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Return to last edit position when opening files
-autocmd BufreadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \   execute "normal! g'\"" |
-            \ endif
-
-" Refactor variable in a project
-nnoremap <leader>re :call Refactor()<CR>
-function! Refactor()
-    let filetype = input("File type to refactor: ")
-    let original = input("Original: ")
-    let replace = input("New name: ")
-
-    :execute "arg**/*." . filetype
-    :execute "argdo %s/" . original . "/" . replace . "/ge"
-endfunction
+" Undo tree settings
+nnoremap <leader>u :UndotreeToggle<cr><C-w>l
+let g:undotree_WindowLayout = 4
+let g:undotree_SplitWidth = 45
 
 " whichkey map list
 call which_key#register('<Space>', "g:which_key_map")
@@ -268,6 +228,7 @@ let g:which_key_map.s.N = 'Prev Word'
 
 let g:which_key_map.t = { 'name' : "+Toggle" }
 let g:which_key_map.t.g = 'Goyo'
+let g:which_key_map.t.j = 'Journal'
 let g:which_key_map.t.p = 'Paste'
 let g:which_key_map.t.s = 'Spell'
 let g:which_key_map.t.w = 'Wrap'
@@ -276,3 +237,41 @@ let g:which_key_map.w = { 'name' : "+Window" }
 let g:which_key_map.w.s = 'Split Down'
 let g:which_key_map.w.v = 'Split Side'
 let g:which_key_map.w.b = 'which_key_ignore'
+
+" Remove trailing white space when saving
+autocmd BufWritePre * %s/\s\+$//e
+
+" coc tab to auto complete
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+
+" coc tab to select next autocomplete
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" coc use CTRL+Space to trigger completion
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Return to last edit position when opening files
+autocmd BufreadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   execute "normal! g'\"" |
+            \ endif
+
+" Refactor variable in a project
+nnoremap <leader>re :call Refactor()<CR>
+function! Refactor()
+    let filetype = input("File type to refactor: ")
+    let original = input("Original: ")
+    let replace = input("New name: ")
+
+    :execute "arg**/*." . filetype
+    :execute "argdo %s/" . original . "/" . replace . "/ge"
+endfunction
