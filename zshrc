@@ -94,7 +94,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 # quick alias
 alias c='clear'
-alias o='dash ~/scripts/open_file.sh'
+alias o='dash ~/scripts/general/open_file.sh'
 alias py='python'
 alias q='exit'
 alias v='nvim'

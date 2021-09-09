@@ -28,7 +28,7 @@ filetype plugin on " required for nerdcommenter
 set filetype=on " file detection
 set noerrorbells " no sounds
 set hidden " keeps files in buffer
-set timeoutlen=0 " time before <leader> original function is executed
+set timeoutlen=500 " time before <leader> original function is executed
 
 " Colors
 colorscheme gruvbox
@@ -81,6 +81,8 @@ nnoremap j gj
 vnoremap j gj
 nnoremap k gk
 vnoremap k gk
+nnoremap gn gt
+nnoremap gN gT
 nnoremap , ;
 nnoremap ; ,
 vnoremap <C-y> "+y
@@ -154,16 +156,12 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
-" Manage tabs
-nnoremap <leader>fo :tabnew<CR><cmd>Telescope find_files<CR>
-nnoremap gn gt
-nnoremap gN gT
-
 " Fuzzy search
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fo :tabnew<CR><cmd>Telescope find_files<CR>
 
 " Anyfold settings
 nnoremap <leader>o za

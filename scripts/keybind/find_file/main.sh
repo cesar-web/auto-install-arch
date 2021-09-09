@@ -19,6 +19,6 @@ file=$(echo $file | sed "s/.*\///")
 file=$(echo $file | sed 's! !\\ !g')
 
 # Dont open vim if the user quit
-if [ $file != '' ]; then
-    dash ~/scripts/general/open_file.sh $file
+if [ "$file" != '' ]; then
+    dash ~/scripts/general/open_file.sh "$file"
 fi
