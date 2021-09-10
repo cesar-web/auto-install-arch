@@ -6,8 +6,8 @@ static const int vertpad            = 0;        /* vertical padding of bar */
 static const int sidepad            = 0;        /* horizontal padding of bar */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMonoNerd Font:size=10"};
-static const char dmenufont[]       = "JetBrainsMonoNerd Font:size=10";
+static const char *fonts[]          = { "JetBrains Mono:size=10"};
+static const char dmenufont[]       = "JetBrains Mono:size=10";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";

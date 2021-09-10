@@ -102,18 +102,19 @@ alias vi='nvim'
 alias vim='nvim'
 
 # config files
-alias bind='nvim ~/.xbindkeysrc'
-alias brc='nvim ~/.bashrc'
-alias dwm='cd ~/programs/dwm/; ls; nvim config.h'
-alias ini='nvim ~/.config/nvim/init.vim'
-alias zrc='nvim ~/.zshrc'
+alias bind='nvim ~/auto-install-arch/xbindkeysrc'
+alias brc='nvim ~/auto-install-arch/bashrc'
+alias dwm='cd ~/auto-install-arch/programs/dwm/; ls; nvim config.h'
+alias ini='nvim ~/auto-install-arch/.config/nvim/init.vim'
+alias zrc='nvim ~/auto-install-arch/zshrc'
+alias build='cd ~/auto-install-arch; sudo dash replace_files.sh'
 
 alias cp='cp -riv'
 alias mv='mv -iv'
 alias mkdir='mkdir -vp'
 
 # replace original commands
-alias df='duf -only local'
+alias df='df -h'
 alias less='bat --theme=gruvbox-dark'
 
 # give terminal color
