@@ -15,7 +15,7 @@ while true; do
     CPU=$(top -bn1 | grep Cpu | awk '{print $2}')%
 
     # Keyboard
-    statusbar+=$(printf "%s | " "$(setxkbmap -query | awk '/layout/{print $2}')")
+    #statusbar+=$(printf "%s | " "$(setxkbmap -query | awk '/layout/{print $2}')")
 
     # Date and time
     statusbar+=$(printf "%s" "$(date "+%a %B %d | %I:%M:%S ")")

@@ -1,28 +1,32 @@
 #!bin/sh
 
-sudo sudo
+sudo echo ""
 
 # Replace home files
-\cp bashrc ~/.bashrc
-\cp zshrc ~/.zshrc
-\cp xinitrc ~/.xinitrc
+\cp -v bashrc /home/cesar/.bashrc
+\cp -v zshrc /home/cesar/.zshrc
+\cp -v xinitrc /home/cesar/.xinitrc
 
-\cp xbindkeysrc ~/.xbindkeysrc
-xbindkeysrc --poll-rc
+\cp -v xbindkeysrc /home/cesar/.xbindkeysrc
+xbindkeys --poll-rc
 
 # Replace directories
-\cp -r config/ ~/.config/
-\cp -r scripts/ ~/scripts/
-\cp -r programs/ ~/programs/
+\cp -v -r .config/ /home/cesar/
+\cp -v -r scripts/ /home/cesar/
+\cp -v -r programs/ /home/cesar/
 
-echo "\n########################################"
+echo ""
+echo "########################################"
 echo "#          All files replaced          #"
-echo "########################################\n"
+echo "########################################"
+echo ""
 
 # Build dwm
-cd ~/programs/dwm/
+cd /home/cesar/programs/dwm/
 sudo make clean install
 
-echo "\n#######################################"
-echo "#              DWM built              #"
-echo "#######################################\n"
+echo ""
+echo "########################################"
+echo "#             DWM compiled             #"
+echo "########################################"
+echo ""
