@@ -55,7 +55,8 @@
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   Mod4 + m
 
-# Alt Gr key
+
+# Alt Gr (launch software)
 # ==================================================================0
 
 "qutebrowser"
@@ -63,13 +64,6 @@
 
 "alacritty -e bash ytfzf -l -s -m"
   Mod2+Mod5 + r
-
-  "alacritty -e dash /home/cesar/scripts/keybind/clipmenu/main.sh"
-  Mod2+Mod5 + z
-
-# screenshot, copy to clipboard
-"maim -s -u | xclip -selection clipboard -t image/png -i"
-  Mod2+Mod5 + a
 
 "alacritty -e pacmixer"
   Mod2+Mod5 + s
@@ -82,6 +76,19 @@
 
 "alacritty"
   Mod2+Mod5 + c
+
+
+# FN (utilities)
+# ==================================================================0
+
+# screenshot, copy to clipboard
+  "maim -s -u | xclip -selection clipboard -t image/png -i"
+  Alt+Mod2 + s
+
+# Open clipboard history
+"alacritty -e dash /home/cesar/scripts/keybind/clipmenu/main.sh"
+  Alt+Mod2 + c
+
 
 ##################################
 # End of xbindkeys configuration #
