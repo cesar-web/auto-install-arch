@@ -258,7 +258,6 @@ export CM_OUTPUT_CLIP=0
 export CM_MAX_CLIPS=10
 export CM_LAUNCHER="fzf"
 
-source ~/.profile
 source ~/programs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #echo " $(fortune -n 20 -s) \n" "Time: $(uptime | sed 's/ //' | grep -o '^\S*') \n" "$(uptime --pretty | sed 's/up //') " | cowthink -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e default mutilated small three-eyes) -n
