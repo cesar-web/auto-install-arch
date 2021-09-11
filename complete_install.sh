@@ -23,6 +23,7 @@ sudo pacman -S vim                       --noconfirm # Text editor
 sudo pacman -S gvim                      --noconfirm # Text editor
 sudo pacman -S neovim                    --noconfirm # Text editor
 sudo pacman -S nodejs                    --noconfirm # Needed for vim coc
+sudo pacman -S ranger                    --noconfirm # Terminal file manager
 sudo pacman -S qutebrowser               --noconfirm # Keyboard oriented browser
 sudo pacman -S zathura                   --noconfirm # PDF viewer
 sudo pacman -S zathura-pdf-mupdf         --noconfirm # PDF viewer

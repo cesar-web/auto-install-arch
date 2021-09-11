@@ -62,6 +62,9 @@
 "qutebrowser"
   Mod2+Mod5 + w
 
+"alacritty -e ranger"
+  Mod2+Mod5 + e
+
 "alacritty -e bash ytfzf -l -s -m"
   Mod2+Mod5 + r
 
