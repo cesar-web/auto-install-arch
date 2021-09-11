@@ -19,7 +19,7 @@ sudo pacman -S zsh                       --noconfirm # Shell I use
 # Multimedia
 sudo pacman -S feh                       --noconfirm # Image viewer and wallpaper setter
 sudo pacman -S mpv                       --noconfirm # Audio and video player
-sudo pacman -S neovim gvim               --noconfirm # Text editor
+sudo pacman -S vim neovim gvim           --noconfirm # Text editor
 sudo pacman -S qutebrowser               --noconfirm # Keyboard oriented browser
 sudo pacman -S zathura zathura-pdf-mupdf --noconfirm # PDF viewer
 
@@ -45,8 +45,8 @@ sudo pacman -S unzip                     --noconfirm # Extract files
 
 # Other software
 sudo pacman -S htop                      --noconfirm # View system processes
-sudo pacman -S neofetch                  --noconfirm # Show system info
 sudo pacman -S man                       --noconfirm # Manuals form commands
+sudo pacman -S neofetch                  --noconfirm # Show system info
 sudo pacman -S tree                      --noconfirm # Show files in a tree structure
 
 echo ""
@@ -85,6 +85,9 @@ xbindkeys --poll-rc
 \cp -v -r .config/ /home/cesar/
 \cp -v -r scripts/ /home/cesar/
 \cp -v -r programs/ /home/cesar/
+
+# Set the wallpaper
+feh --bg-center /home/cesar/auto-install-arch/wallpaper.png
 
 echo ""
 echo "########################################"
