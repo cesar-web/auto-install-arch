@@ -54,8 +54,8 @@ sudo pacman -S neofetch                  --noconfirm # Show system info
 sudo pacman -S tree                      --noconfirm # Show files in a tree structure
 
 # AUR software
-sudo yay -S devour                       --noconfirm # Swallow windows
-sudo yay -S ytfzf                        --noconfirm # YouTube from the terminal
+yay -S devour                            --noconfirm # Swallow windows
+yay -S ytfzf                             --noconfirm # YouTube from the terminal
 sudo pacman -S jq                        --noconfirm # ytfzf dependency
 sudo pacman -S ueberzug                  --noconfirm # ytfzf dependency
 
