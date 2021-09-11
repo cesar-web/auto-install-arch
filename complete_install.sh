@@ -58,6 +58,7 @@ yay -S devour                            --noconfirm # Swallow windows
 yay -S ytfzf                             --noconfirm # YouTube from the terminal
 sudo pacman -S jq                        --noconfirm # ytfzf dependency
 sudo pacman -S ueberzug                  --noconfirm # ytfzf dependency
+yay -S pacmixer                          --noconfirm # Sound manager
 
 echo ""
 echo "########################################"
