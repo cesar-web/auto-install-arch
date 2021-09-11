@@ -90,11 +90,7 @@ xbindkeys --poll-rc
 \cp -v -r programs/ /home/cesar/
 
 # Set the wallpaper
-feh --bg-center /home/cesar/auto-install-arch/wallpaper.png
-
-# Install Vim Plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+\feh --bg-center /home/cesar/auto-install-arch/wallpaper.png
 
 echo ""
 echo "########################################"
