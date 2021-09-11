@@ -33,7 +33,7 @@ settings:
   completion.timestamp_format:
     global: '%Y-%m-%d %H:%M'
   completion.web_history.max_items:
-    global: 1
+    global: 0
   content.autoplay:
     global: false
   downloads.remove_finished:
