@@ -90,7 +90,7 @@ xbindkeys --poll-rc
 \cp -v -r programs/ /home/cesar/
 
 # Set the wallpaper
-\feh --bg-center /home/cesar/auto-install-arch/wallpaper.png
+\feh --bg-fill /home/cesar/auto-install-arch/wallpaper.png
 
 # Install VimPlug for Neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
