@@ -19,9 +19,12 @@ sudo pacman -S zsh                       --noconfirm # Shell I use
 # Multimedia
 sudo pacman -S feh                       --noconfirm # Image viewer and wallpaper setter
 sudo pacman -S mpv                       --noconfirm # Audio and video player
-sudo pacman -S vim neovim gvim           --noconfirm # Text editor
+sudo pacman -S vim                       --noconfirm # Text editor
+sudo pacman -S gvim                      --noconfirm # Text editor
+sudo pacman -S neovim                    --noconfirm # Text editor
 sudo pacman -S qutebrowser               --noconfirm # Keyboard oriented browser
-sudo pacman -S zathura zathura-pdf-mupdf --noconfirm # PDF viewer
+sudo pacman -S zathura                   --noconfirm # PDF viewer
+sudo pacman -S zathura-pdf-mupdf         --noconfirm # PDF viewer
 
 # Scripting
 sudo pacman -S fzf                       --noconfirm # Fuzzy finder for scripting
@@ -88,6 +91,10 @@ xbindkeys --poll-rc
 
 # Set the wallpaper
 feh --bg-center /home/cesar/auto-install-arch/wallpaper.png
+
+# Install Vim Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo ""
 echo "########################################"
