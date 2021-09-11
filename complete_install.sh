@@ -7,7 +7,7 @@ sudo pacman -Syyu                        --noconfirm # Update system
 # ==================================================
 
 # Install Xorg server
-sudo pacman -S xorg-xinit xorg --noconfirm
+#sudo pacman -S xorg-xinit xorg --noconfirm
 
 sudo pacman -S alacritty                 --noconfirm # Terminal emulator
 sudo pacman -S exa                       --noconfirm # A better ls
@@ -53,6 +53,12 @@ sudo pacman -S man                       --noconfirm # Manuals form commands
 sudo pacman -S neofetch                  --noconfirm # Show system info
 sudo pacman -S tree                      --noconfirm # Show files in a tree structure
 
+# AUR software
+sudo yay -S devour                       --noconfirm # Swallow windows
+sudo yay -S ytfzf                        --noconfirm # YouTube from the terminal
+sudo pacman -S jq                        --noconfirm # ytfzf dependency
+sudo pacman -S ueberzug                  --noconfirm # ytfzf dependency
+
 echo ""
 echo "########################################"
 echo "#          Installed software          #"
@@ -90,9 +96,6 @@ xbindkeys --poll-rc
 \cp -v -r scripts/ /home/cesar/
 \cp -v -r programs/ /home/cesar/
 
-# Set the wallpaper
-\feh --bg-fill /home/cesar/auto-install-arch/wallpaper.png
-
 # Install VimPlug for Neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -120,3 +123,6 @@ echo "########################################"
 echo "#             DWM compiled             #"
 echo "########################################"
 echo ""
+
+# Set the wallpaper
+\feh --bg-fill /home/cesar/auto-install-arch/wallpaper.png
