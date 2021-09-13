@@ -63,7 +63,7 @@
   Mod2+Mod5 + w
 
 "alacritty -e ranger"
-  Mod2+Mod5 + e
+  Mod2+Mod5 + a
 
 "alacritty -e bash ytfzf -l -s -m"
   Mod2+Mod5 + r
