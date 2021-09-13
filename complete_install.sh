@@ -8,6 +8,7 @@ sudo pacman -Syyu                        --noconfirm # Update system
 
 # Install Xorg server
 #sudo pacman -S xorg-xinit xorg --noconfirm
+sudo pacman -S xdg-user-dirs             --noconfirm # Change names of default $HOME folders
 
 sudo pacman -S alacritty                 --noconfirm # Terminal emulator
 sudo pacman -S exa                       --noconfirm # A better ls
@@ -127,4 +128,4 @@ echo "########################################"
 echo ""
 
 # Set the wallpaper
-\feh --bg-fill /home/cesar/auto-install-arch/wallpaper.png
+#\feh --bg-fill /home/cesar/auto-install-arch/wallpaper.png
