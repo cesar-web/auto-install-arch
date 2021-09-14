@@ -48,4 +48,7 @@ unclutter -idle 10 --jitter 80 &
 /home/cesar/scripts/loop/dwmstatus.sh &
 ~/.fehbg &
 
+# speed up keyboard
+#xset r rate 300 50 &
+
 exec dwm

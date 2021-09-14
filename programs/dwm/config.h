@@ -1,6 +1,6 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 3;        /* gaps between windows */
+static const unsigned int gappx     = 2;        /* gaps between windows */
 static const unsigned int snap      = 30;       /* snap pixel */
 static const int vertpad            = 0;        /* vertical padding of bar */
 static const int sidepad            = 0;        /* horizontal padding of bar */
@@ -59,12 +59,13 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODALT Mod1Mask
+#define MODSUP Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODALT,                       KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODALT|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODALT|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODALT|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -79,46 +80,59 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-    { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_plus,   spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_minus,  killclient,     {0} },
-    { MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-    { MODKEY,                       XK_y,      togglescratch,  {.v = scratchpadcmd } },
 
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-	{ MODKEY,                       XK_n,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_m,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
+    // Lanuch programs (most of the programs are in xbindkeysrc)
+    { MODALT,                       XK_Return, spawn,          {.v = termcmd } },
+    { MODALT,                       XK_plus,   spawn,          {.v = termcmd } },
+    { MODALT,                       XK_minus,  killclient,     {0} },
+    { MODALT|ShiftMask,             XK_q,      killclient,     {0} },
+    { MODALT,                       XK_y,      togglescratch,  {.v = scratchpadcmd } },
 
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglesticky,   {0} },
+    // Manipulate windows
+	{ MODALT,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODALT,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODALT|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODALT|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+	{ MODALT,                       XK_n,      incnmaster,     {.i = +1 } },
+	{ MODALT,                       XK_m,      incnmaster,     {.i = -1 } },
+	{ MODALT,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODALT,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODALT|ShiftMask,             XK_Return, zoom,           {0} },
 
-	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
-	{ MODKEY|ShiftMask,             XK_b,      togglealttag,   {0} },
+	{ MODALT,                       XK_space,  setlayout,      {0} },
+	{ MODALT|ShiftMask,             XK_space,  togglesticky,   {0} },
+	{ MODALT,                       XK_f,      togglefullscr,  {0} },
 
-	//{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-	//{ MODKEY,                       XK_plus,   setgaps,        {.i = +1 } },
-	//{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = 0  } },
+    // Multiple monitors
+	{ MODALT,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODALT,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODALT|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODALT|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODALT,                       XK_F5,     xrdb,           {.v = NULL } },
 
+    // dwm status
+    { MODALT,                       XK_b,      togglebar,      {0} },
+	{ MODALT|ShiftMask,             XK_b,      togglealttag,   {0} },
+
+    // Gaps
+	{ MODALT,                       XK_z,      setgaps,        {.i = -1 } },
+	{ MODALT|ShiftMask,             XK_z,      setgaps,        {.i = +1 } },
+
+    // Change layouts
+    { MODSUP,                       XK_u,      setlayout,      {.v = &layouts[0]} },
+    { MODSUP,                       XK_i,      setlayout,      {.v = &layouts[2]} },
+    { MODSUP,                       XK_o,      setlayout,      {.v = &layouts[1]} },
+    { MODSUP,                       XK_p,      setlayout,      {.v = &layouts[3]} },
+
+    // Move through tags
+    { MODALT,                       XK_Tab,    view,           {0} },
+    { MODALT,                       XK_0,      view,           {.ui = ~0 } },
+    { MODALT|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	TAGKEYS(                        XK_u,                      0)
 	TAGKEYS(                        XK_i,                      1)
 	TAGKEYS(                        XK_o,                      2)
     TAGKEYS(                        XK_p,                      3)
-	{ MODKEY|ShiftMask|ControlMask, XK_x,      quit,           {0} },
+	{ MODALT|ShiftMask|ControlMask, XK_x,      quit,           {0} },
 };
 
 /* button definitions */
@@ -129,13 +143,13 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
-	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+	{ ClkClientWin,         MODALT,         Button1,        movemouse,      {0} },
+	{ ClkClientWin,         MODALT,         Button2,        togglefloating, {0} },
+	{ ClkClientWin,         MODALT,         Button3,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkTagBar,            MODALT,         Button1,        tag,            {0} },
+	{ ClkTagBar,            MODALT,         Button3,        toggletag,      {0} },
 };
 
 void

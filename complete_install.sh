@@ -28,6 +28,8 @@ sudo pacman -S ranger                    --noconfirm # Terminal file manager
 sudo pacman -S qutebrowser               --noconfirm # Keyboard oriented browser
 sudo pacman -S zathura                   --noconfirm # PDF viewer
 sudo pacman -S zathura-pdf-mupdf         --noconfirm # PDF viewer
+sudo pacman -S pandoc                    --noconfirm # Write PDF files with vim
+sudo pacman -S texlive-core              --noconfirm # Needed to show images and compile pandoc
 
 # Scripting
 sudo pacman -S fzf                       --noconfirm # Fuzzy finder for scripting

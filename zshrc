@@ -107,7 +107,7 @@ alias brc='nvim ~/auto-install-arch/bashrc'
 alias dwm='cd ~/auto-install-arch/programs/dwm/; ls; nvim config.h'
 alias ini='nvim ~/auto-install-arch/.config/nvim/init.vim'
 alias zrc='nvim ~/auto-install-arch/zshrc'
-alias build='cd ~/auto-install-arch; sudo dash replace_files.sh'
+alias build='cd ~/auto-install-arch; dash replace_files.sh'
 
 alias cp='cp -riv'
 alias mv='mv -iv'

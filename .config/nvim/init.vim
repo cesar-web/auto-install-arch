@@ -15,7 +15,7 @@ Plug 'pseewald/vim-anyfold' " automatic fold creation
 Plug 'mbbill/undotree' " show a history of the file's modifications
 Plug 'tpope/vim-surround' " surround key [ cs([ ]
 Plug 'liuchengxu/vim-which-key' " menu popup after leader
-"Plug 'jiangmiao/auto-pairs' " automatic ([{}]) close
+Plug 'jiangmiao/auto-pairs' " automatic ([{}]) close
 
 " fuzzy search
 Plug 'nvim-lua/popup.nvim'
@@ -73,6 +73,10 @@ set ignorecase " do case insensitive search...
 set incsearch " do incremental search
 set smartcase " ... unless capital letters are used
 
+" ======================================================================
+" Remaps
+" ======================================================================
+
 " Quality of life
 nnoremap Y y$
 nnoremap - /
@@ -97,8 +101,8 @@ nnoremap <Leader>tg :Goyo<CR>
 nnoremap <Leader>tj :set paste!<CR>:set spell!<CR>:set wrap!<CR>:set linebreak!<CR>:Goyo<CR>
 
 " Insert
-nnoremap <leader>id i<C-R>=strftime("%a %b %d %Y")<CR><ESC>
-nnoremap <leader>il iLorem ipsum dolor sit amet, consectetur adipiscing elit<ESC>
+nnoremap <leader>id a<C-R>=strftime("%a %b %d %Y")<CR><ESC>
+nnoremap <leader>il aLorem ipsum dolor sit amet, consectetur adipiscing elit<ESC>
 
 " Quick line jumps
 nnoremap H ^
@@ -110,7 +114,6 @@ vnoremap L $
 nnoremap Q <nop>
 
 " Save and close files
-autocmd Filetype dart nnoremap <leader>fs :DartFmt<CR>:w<CR>
 nnoremap <leader>fs :w<CR>
 nnoremap <leader>qq :q<CR>
 nnoremap <leader>qa :qa<CR>
@@ -128,6 +131,8 @@ nnoremap <Leader>= m'gg=G`'
 nnoremap <leader>sn ]S
 nnoremap <leader>sN [S
 nnoremap <leader>ss z=
+nnoremap <leader>sle :set spelllang=en<CR>
+nnoremap <leader>sls :set spelllang=es<CR>
 
 " Keep cursor centered while searching
 nnoremap n nzzzv
@@ -163,10 +168,17 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fo :tabnew<CR><cmd>Telescope find_files<CR>
 
+" Pandoc binds
+nnoremap <leader>pt a---<CR>title: Lorem<CR>subtitle: Ipsum<CR>...<CR><ESC>
+
 " Anyfold settings
 nnoremap <leader>o za
 set foldlevel=99
 autocmd Filetype * AnyFoldActivate
+
+" ======================================================================
+" Plugin configurations
+" ======================================================================
 
 " Light line color scheme
 let g:lightline={'colorscheme':'gruvbox',}
@@ -219,6 +231,9 @@ let g:which_key_map.q.a = 'Quit All'
 let g:which_key_map.r = { 'name' : "+Refactor" }
 let g:which_key_map.r.e = 'Refactor Variable'
 
+let g:which_key_map.p = { 'name' : "+Pandoc" }
+let g:which_key_map.p.t = 'Title'
+
 let g:which_key_map.s = { 'name' : '+Spell' }
 let g:which_key_map.s.s = 'Spell Check'
 let g:which_key_map.s.n = 'Next Word'
@@ -236,8 +251,30 @@ let g:which_key_map.w.s = 'Split Down'
 let g:which_key_map.w.v = 'Split Side'
 let g:which_key_map.w.b = 'which_key_ignore'
 
+" ======================================================================
+" Auto commands
+" ======================================================================
+
+" Format dart code on save
+autocmd Filetype dart nnoremap <leader>fs :DartFmt<CR>:w<CR>
+
+" Replace original files with git
+autocmd BufWritePost bashrc :!cp ~/auto-install-arch/bashrc ~/.bashrc
+autocmd BufWritePost init.vim :!cp ~/auto-install-arch/.config/nvim/init.vim ~/.config/nvim/init.vim
+autocmd BufWritePost xbindkeysrc :!cp ~/auto-install-arch/xbindkeysrc ~/.xbindkeysrc
+autocmd BufWritePost xinitrc :!cp ~/auto-install-arch/xinitrc ~/.xinitrc
+autocmd BufWritePost zshrc :!cp ~/auto-install-arch/zshrc ~/.zshrc
+autocmd BufWritePost rc.conf :!cp ~/auto-install-arch/.config/ranger/rc.conf ~/.config/ranger/rc.conf
+
+" Auto compile pandoc
+autocmd BufWritePost *.md :!pandoc % -o %:r.pdf
+
 " Remove trailing white space when saving
 autocmd BufWritePre * %s/\s\+$//e
+
+" ======================================================================
+" Functions
+" ======================================================================
 
 " coc tab to auto complete
 inoremap <silent><expr> <TAB>
