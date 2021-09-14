@@ -170,6 +170,7 @@ nnoremap <leader>fo :tabnew<CR><cmd>Telescope find_files<CR>
 
 " Pandoc binds
 nnoremap <leader>pt a---<CR>title: Lorem<CR>subtitle: Ipsum<CR>...<CR><ESC>
+nnoremap <leader>pc a---<CR>geometry: "left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm"<CR>---<CR><CR>\<CR><CR>![](/home/cesar/documents/pictures/ceti.jpg)<CR><CR>\<CR><CR>---<CR><CR>\<CR><CR>## Document title<CR>## Class name<CR>## Full name goes here<CR>## 13 de Septiembre, 2021<CR><CR>\newpage<CR><CR>## Intro<CR><ESC>
 
 " Anyfold settings
 nnoremap <leader>o za
