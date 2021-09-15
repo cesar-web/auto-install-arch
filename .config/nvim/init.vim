@@ -64,8 +64,6 @@ set shiftwidth=4 " set indentation depth to 4 columns
 set softtabstop=4 " back spacing over 4 spaces like over tabs
 set tabstop=4 " set tabulator length to 4 columns
 set mouse=a " allow mouse to change cursor position
-" disable auto comments on a new line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Search settings
 set nohlsearch " remove highlight while searching
@@ -93,6 +91,16 @@ vnoremap <C-y> "+y
 nnoremap <C-a> ggVG
 nnoremap <leader><leader> V
 
+" Center cursor while navigating
+nnoremap {  {zz
+nnoremap }  }zz
+nnoremap n  nzz
+nnoremap N  Nzz
+
+" Dont save these changes to register
+nnoremap c "_c
+nnoremap C "_C
+
 " Toggle
 nnoremap <Leader>tp :set paste!<CR>
 nnoremap <Leader>ts :set spell!<CR>
@@ -105,10 +113,10 @@ nnoremap <leader>id a<C-R>=strftime("%a %b %d %Y")<CR><ESC>
 nnoremap <leader>il aLorem ipsum dolor sit amet, consectetur adipiscing elit<ESC>
 
 " Quick line jumps
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L $
+nnoremap H g^
+nnoremap L g$
+vnoremap H g^
+vnoremap L g$
 
 " Turn off ex mode
 nnoremap Q <nop>
@@ -240,6 +248,10 @@ let g:which_key_map.s.s = 'Spell Check'
 let g:which_key_map.s.n = 'Next Word'
 let g:which_key_map.s.N = 'Prev Word'
 
+let g:which_key_map.s.l = { 'name' : '+Language' }
+let g:which_key_map.s.l.e = 'English'
+let g:which_key_map.s.l.s = 'Spanish'
+
 let g:which_key_map.t = { 'name' : "+Toggle" }
 let g:which_key_map.t.g = 'Goyo'
 let g:which_key_map.t.j = 'Journal'
@@ -267,11 +279,17 @@ autocmd BufWritePost xinitrc :!cp ~/auto-install-arch/xinitrc ~/.xinitrc
 autocmd BufWritePost zshrc :!cp ~/auto-install-arch/zshrc ~/.zshrc
 autocmd BufWritePost rc.conf :!cp ~/auto-install-arch/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 
-" Auto compile pandoc
+" Compile pandoc
 autocmd BufWritePost *.md :!pandoc % -o %:r.pdf
 
 " Remove trailing white space when saving
 autocmd BufWritePre * %s/\s\+$//e
+
+" Equalize splits when vim is resized
+autocmd VimResized * wincmd =
+
+" disable auto comments on a new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " ======================================================================
 " Functions
