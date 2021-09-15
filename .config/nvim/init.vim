@@ -106,7 +106,7 @@ nnoremap <Leader>tp :set paste!<CR>
 nnoremap <Leader>ts :set spell!<CR>
 nnoremap <Leader>tw :set wrap!<CR>:set linebreak!<CR>
 nnoremap <Leader>tg :Goyo<CR>
-nnoremap <Leader>tj :set paste!<CR>:set spell!<CR>:set wrap!<CR>:set linebreak!<CR>:Goyo<CR>
+nnoremap <Leader>tj :set spell!<CR>:set wrap!<CR>:set linebreak!<CR>:Goyo<CR>
 
 " Insert
 nnoremap <leader>id a<C-R>=strftime("%a %b %d %Y")<CR><ESC>
