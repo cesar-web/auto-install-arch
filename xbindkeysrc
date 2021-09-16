@@ -43,17 +43,9 @@
 # Windows Key
 # ==================================================================0
 
-# Increase volume
-"pactl set-sink-volume @DEFAULT_SINK@ +2000"
-  Mod4 + k
-
-# Decrease volume
-"pactl set-sink-volume @DEFAULT_SINK@ -2000"
-  Mod4 + j
-
-# Mute volume
+# Mute volume WIN+m
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-  Mod4 + m
+  Mod2+Mod4 + m
 
 
 # Alt Gr (launch software)

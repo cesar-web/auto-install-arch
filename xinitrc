@@ -35,13 +35,11 @@ numlockx &
 
 # add personal keybindings
 xbindkeys &
-sxhkd &
 
 # start clipmenu
 clipmenud &
 
 # auto hide mouse
-unclutter &
 unclutter -idle 10 --jitter 80 &
 
 # load statusbar and wallpaper
@@ -49,6 +47,6 @@ unclutter -idle 10 --jitter 80 &
 ~/.fehbg &
 
 # speed up keyboard
-#xset r rate 300 50 &
+xset r rate 250 30 &
 
 exec dwm

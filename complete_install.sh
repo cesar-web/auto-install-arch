@@ -9,6 +9,7 @@ sudo pacman -Syyu                        --noconfirm # Update system
 # Install Xorg server
 #sudo pacman -S xorg-xinit xorg --noconfirm
 sudo pacman -S xdg-user-dirs             --noconfirm # Change names of default $HOME folders
+sudo pacman -S xorg-xset                 --noconfirm # Change keyboard input speed
 
 sudo pacman -S alacritty                 --noconfirm # Terminal emulator
 sudo pacman -S exa                       --noconfirm # A better ls
