@@ -112,6 +112,7 @@ alias build='cd ~/auto-install-arch; dash replace_files.sh'
 alias cp='cp -riv'
 alias mv='mv -iv'
 alias mkdir='mkdir -vp'
+alias du='du -h'
 
 # replace original commands
 alias df='df -h'
@@ -147,6 +148,13 @@ alias ssc="devour maim --select | xclip -selection clipboard -t image/png"
 # pacman alias
 alias ps="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias pd="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+
+# create document with date and edit it
+jo() {
+    currentDate=$(date "+%G-%b-%d" | awk '{print tolower($0)}')
+    touch $currentDate
+    nvim $currentDate
+}
 
 # archive extractor
 ex() {
