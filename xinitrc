@@ -47,6 +47,6 @@ unclutter -idle 10 --jitter 80 &
 ~/.fehbg &
 
 # speed up keyboard
-xset r rate 250 30 &
+xset r rate 250 35 &
 
 exec dwm
