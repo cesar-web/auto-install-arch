@@ -52,6 +52,10 @@ sudo pacman -S tar                       --noconfirm # Extract files
 sudo pacman -S unrar                     --noconfirm # Extract files
 sudo pacman -S unzip                     --noconfirm # Extract files
 
+# GUI software
+sudo pacman -S pcmanfm                   --noconfirm # File manager
+sudo pacman -S gnome-disk-utility        --noconfirm # View connected usb devices
+
 # Other software
 sudo pacman -S htop                      --noconfirm # View system processes
 sudo pacman -S man                       --noconfirm # Manuals form commands
