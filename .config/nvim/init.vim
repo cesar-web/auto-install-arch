@@ -92,10 +92,12 @@ nnoremap <C-a> ggVG
 nnoremap <leader><leader> V
 
 " Center cursor while navigating
-nnoremap {  {zz
-nnoremap }  }zz
-nnoremap n  nzz
-nnoremap N  Nzz
+nnoremap { {zz
+nnoremap } }zz
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap <c-d> <c-d>zz
+nnoremap <c-d> <c-d>zz
 
 " Dont save these changes to register
 nnoremap c "_c
@@ -110,13 +112,14 @@ nnoremap <Leader>tj :set spell!<CR>:set wrap!<CR>:set linebreak!<CR>:Goyo<CR>
 
 " Insert
 nnoremap <leader>id a<C-R>=strftime("%a %b %d %Y")<CR><ESC>
-nnoremap <leader>il aLorem ipsum dolor sit amet, consectetur adipiscing elit<ESC>
+nnoremap <leader>ill aLorem ipsum dolor sit amet, consectetur adipiscing elit. <ESC>
+nnoremap <leader>ilp aLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non mi volutpat, tincidunt erat eget, scelerisque massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis massa tincidunt, efficitur metus sit amet, dignissim est. Maecenas sollicitudin, magna ac hendrerit rhoncus, mi turpis gravida lacus, eu iaculis enim lectus vel mauris. Aliquam et metus tincidunt, mollis erat id, venenatis risus. Sed elit ipsum, lobortis quis porttitor in, euismod in turpis. Vivamus sodales sagittis mi imperdiet dignissim. Etiam varius feugiat accumsan. Aliquam nulla ex, vulputate eget ullamcorper et, tincidunt quis justo. Maecenas pellentesque tincidunt porttitor. Aenean eget felis posuere ex sodales rhoncus. Curabitur finibus in massa eget laoreet. Nullam in tincidunt augue.<ESC>
 
 " Quick line jumps
-nnoremap H g^
-nnoremap L g$
-vnoremap H g^
-vnoremap L g$
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
 
 " Turn off ex mode
 nnoremap Q <nop>
@@ -231,7 +234,10 @@ let g:which_key_map.f.t = 'File Tree'
 
 let g:which_key_map.i = { 'name' : '+Insert' }
 let g:which_key_map.i.d = 'Date'
-let g:which_key_map.i.l = 'Lorem Ipsum'
+
+let g:which_key_map.i.l = { 'name' : '+Lorem' }
+let g:which_key_map.i.l.l = 'Line'
+let g:which_key_map.i.l.p = 'Paragraph'
 
 let g:which_key_map.q = { 'name' : '+Quit' }
 let g:which_key_map.q.q = 'Quit Buffer'
