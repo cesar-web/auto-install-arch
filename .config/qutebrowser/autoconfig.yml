@@ -36,6 +36,8 @@ settings:
     global: 0
   content.autoplay:
     global: false
+  content.javascript.enabled:
+    global: true
   downloads.remove_finished:
     global: 1000
   fonts.hints:
@@ -44,6 +46,8 @@ settings:
     global: 14pt
   hints.chars:
     global: asdfjkl
+  messages.timeout:
+    global: 1000
   scrolling.bar:
     global: never
   scrolling.smooth:
