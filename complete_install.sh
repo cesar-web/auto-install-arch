@@ -9,9 +9,9 @@ sudo pacman -Syyu                        --noconfirm # Update system
 # Install Xorg server
 #sudo pacman -S xorg-xinit xorg --noconfirm
 sudo pacman -S xdg-user-dirs             --noconfirm # Change names of default $HOME folders
-sudo pacman -S xorg-xset                 --noconfirm # Change keyboard input speed
 
 sudo pacman -S alacritty                 --noconfirm # Terminal emulator
+sudo pacman -S tmux                      --noconfirm # Terminal multiplexer
 sudo pacman -S exa                       --noconfirm # A better ls
 
 # Shells
@@ -44,8 +44,9 @@ sudo pacman -S xclip                     --noconfirm # Used for screenshots
 
 # Keyboard remamps
 sudo pacman -S numlockx                  --noconfirm # Auto enable num lock on keyboard
-sudo pacman -S xbindkeys                 --noconfirm # Custom keybindings
-sudo pacman -S xorg-setxkbmap            --noconfirm # Used to rebind the keyboard
+sudo pacman -S xbindkeys                 --noconfirm # Launch software and scripts
+sudo pacman -S xorg-setxkbmap            --noconfirm # Swap esc and caps-lock
+sudo pacman -S xorg-xset                 --noconfirm # Change keyboard input speed
 
 # Extract files
 sudo pacman -S tar                       --noconfirm # Extract files
@@ -57,7 +58,6 @@ sudo pacman -S pcmanfm                   --noconfirm # File manager
 sudo pacman -S gnome-disk-utility        --noconfirm # View connected usb devices
 
 # Other software
-sudo pacman -S htop                      --noconfirm # View system processes
 sudo pacman -S man                       --noconfirm # Manuals form commands
 sudo pacman -S neofetch                  --noconfirm # Show system info
 sudo pacman -S tree                      --noconfirm # Show files in a tree structure
@@ -68,6 +68,8 @@ yay -S ytfzf                             --noconfirm # YouTube from the terminal
 sudo pacman -S jq                        --noconfirm # ytfzf dependency
 sudo pacman -S ueberzug                  --noconfirm # ytfzf dependency
 yay -S pacmixer                          --noconfirm # Sound manager
+yay -S htop-vim                          --noconfirm # View system processes
+yay -S keyd-git                          --noconfirm # rebind keyboad
 
 echo ""
 echo "########################################"
@@ -97,6 +99,7 @@ cd /home/cesar/auto-install-arch/
 \cp -v bashrc /home/cesar/.bashrc
 \cp -v zshrc /home/cesar/.zshrc
 \cp -v xinitrc /home/cesar/.xinitrc
+\cp -v tmux.conf /home/cesar/.tmux.conf
 
 \cp -v xbindkeysrc /home/cesar/.xbindkeysrc
 xbindkeys --poll-rc

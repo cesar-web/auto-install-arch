@@ -108,7 +108,7 @@ nnoremap <Leader>tp :set paste!<CR>
 nnoremap <Leader>ts :set spell!<CR>
 nnoremap <Leader>tw :set wrap!<CR>:set linebreak!<CR>
 nnoremap <Leader>tg :Goyo<CR>
-nnoremap <Leader>tj :set spell!<CR>:set wrap!<CR>:set linebreak!<CR>:Goyo<CR>
+nnoremap <Leader>tj :Goyo<CR>:set spell!<CR>:set wrap!<CR>:set linebreak!<CR>
 
 " Insert
 nnoremap <leader>id a<C-R>=strftime("%a %b %d %Y")<CR><ESC>
@@ -162,9 +162,8 @@ nnoremap <C-j> :m.+1<CR>==
 nnoremap <C-k> :m.-2<CR>==
 
 " Manage splits
-nnoremap <leader>wv :vsp<CR>
-nnoremap <leader>wb :vsp<CR>
-nnoremap <leader>ws :sp<CR>
+nnoremap <leader>wm :vsp<CR>
+nnoremap <leader>wM :sp<CR>
 
 " Move between splits
 nnoremap <leader>h <C-w>h
@@ -248,6 +247,7 @@ let g:which_key_map.r.e = 'Refactor Variable'
 
 let g:which_key_map.p = { 'name' : "+Pandoc" }
 let g:which_key_map.p.t = 'Title'
+let g:which_key_map.p.c = 'CETI'
 
 let g:which_key_map.s = { 'name' : '+Spell' }
 let g:which_key_map.s.s = 'Spell Check'
@@ -279,11 +279,13 @@ autocmd Filetype dart nnoremap <leader>fs :DartFmt<CR>:w<CR>
 
 " Replace original files with git
 autocmd BufWritePost bashrc :!cp ~/auto-install-arch/bashrc ~/.bashrc
-autocmd BufWritePost init.vim :!cp ~/auto-install-arch/.config/nvim/init.vim ~/.config/nvim/init.vim
+autocmd BufWritePost tmux.conf :!cp ~/auto-install-arch/tmux.conf ~/.tmux.conf
 autocmd BufWritePost xbindkeysrc :!cp ~/auto-install-arch/xbindkeysrc ~/.xbindkeysrc
 autocmd BufWritePost xinitrc :!cp ~/auto-install-arch/xinitrc ~/.xinitrc
 autocmd BufWritePost zshrc :!cp ~/auto-install-arch/zshrc ~/.zshrc
-autocmd BufWritePost rc.conf :!cp ~/auto-install-arch/.config/ranger/rc.conf ~/.config/ranger/rc.conf
+autocmd BufWritePost ~/auto-install-arch/scripts/**/*.sh :!cp -r ~/auto-install-arch/scripts ~
+autocmd BufWritePost ~/auto-install-arch/programs/**/* :!cp -r ~/auto-install-arch/programs ~
+autocmd BufWritePost ~/auto-install-arch/.config/**/* :!cp -r ~/auto-install-arch/.config ~
 
 " Compile pandoc
 autocmd BufWritePost *.md :!pandoc % -o %:r.pdf
