@@ -39,15 +39,6 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-
-# Windows Key
-# ==================================================================0
-
-# Mute volume WIN+m
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
-  Mod2+Mod4 + m
-
-
 # Alt Gr (launch software)
 # ==================================================================0
 
@@ -57,11 +48,14 @@
 "alacritty -e htop"
   Mod2+Mod5 + e
 
-"alacritty -e ranger"
-  Mod2+Mod5 + a
-
 "alacritty -e bash ytfzf -l -s -m"
   Mod2+Mod5 + r
+
+"alacritty -e dash scripts/keybind/tmux/main.sh"
+  Mod2+Mod5 + t
+
+"alacritty -e ranger"
+  Mod2+Mod5 + a
 
 "alacritty -e pacmixer"
   Mod2+Mod5 + s

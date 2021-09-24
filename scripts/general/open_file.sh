@@ -13,11 +13,11 @@ case $file_extension in
     mov ) devour mpv $1 ;;
     wmv ) devour mpv $1 ;;
 
-    jpg ) devour feh --scale-down $1 ;;
-    jpeg) devour feh --scale-down $1 ;;
-    png ) devour feh --scale-down $1 ;;
-    gif ) devour feh --scale-down $1 ;;
-    webp) devour feh --scale-down $1 ;;
+    jpg ) devour feh --scale-down --auto-zoom $1 ;;
+    jpeg) devour feh --scale-down --auto-zoom $1 ;;
+    png ) devour feh --scale-down --auto-zoom $1 ;;
+    gif ) devour feh --scale-down --auto-zoom $1 ;;
+    webp) devour feh --scale-down --auto-zoom $1 ;;
 
     pdf ) devour zathura $1 ;;
     epub) devour zathura $1 ;;

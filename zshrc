@@ -75,6 +75,7 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 [[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"     beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"   end-of-buffer-or-history
 [[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}"  reverse-menu-complete
+[[ -n "${key[Tab]}"       ]] && bindkey -- "${key[Tab]}"        reverse-menu-complete
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
@@ -92,29 +93,33 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
+# auto start my keybinds on startx
+alias startx='sudo keyd -d; startx'
+
 # quick alias
 alias c='clear'
-alias o='dash ~/scripts/general/open_file.sh'
-alias py='python'
 alias q='exit'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias py='python'
+alias o='dash ~/scripts/general/open_file.sh'
 
 # config files
 alias bind='nvim ~/auto-install-arch/xbindkeysrc'
 alias brc='nvim ~/auto-install-arch/bashrc'
-alias dwm='cd ~/auto-install-arch/programs/dwm/; ls; nvim config.h'
+alias dwm='cd ~/auto-install-arch/programs/dwm/; pwd; ll; nvim config.h'
 alias ini='nvim ~/auto-install-arch/.config/nvim/init.vim'
 alias zrc='nvim ~/auto-install-arch/zshrc'
+alias tm='nvim ~/auto-install-arch/tmux.conf'
+alias cnf='dash ~/scripts/general/open_config.sh'
 alias build='cd ~/auto-install-arch; dash replace_files.sh'
 
+# replace original commands
 alias cp='cp -riv'
 alias mv='mv -iv'
 alias mkdir='mkdir -vp'
 alias du='du -h'
-
-# replace original commands
 alias df='df -h'
 alias less='bat --theme=gruvbox-dark'
 
