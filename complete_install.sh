@@ -69,7 +69,7 @@ sudo pacman -S jq                        --noconfirm # ytfzf dependency
 sudo pacman -S ueberzug                  --noconfirm # ytfzf dependency
 yay -S pacmixer                          --noconfirm # Sound manager
 yay -S htop-vim                          --noconfirm # View system processes
-yay -S keyd-git                          --noconfirm # rebind keyboad
+yay -S keyd-git                          --noconfirm # Rebind keyboad
 
 echo ""
 echo "########################################"
@@ -134,6 +134,21 @@ sudo make clean install
 echo ""
 echo "########################################"
 echo "#             DWM compiled             #"
+echo "########################################"
+echo ""
+
+# ==================================================
+# Install window manager and st
+# ==================================================
+
+# Rebind keyboard
+cd /home/cesar/auto-install-arch/
+sudo \cp keyd.cfg /etc/keyd/default.cfg
+sudo systemctl restart keyd
+
+echo ""
+echo "########################################"
+echo "#           Keyboard Rebinded          #"
 echo "########################################"
 echo ""
 

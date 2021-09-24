@@ -1,6 +1,6 @@
 #!bin/sh
 
-echo "Replacing files"
+sudo echo "Replacing files"
 
 # Replace home files
 \cp bashrc /home/cesar/.bashrc
@@ -16,8 +16,18 @@ xbindkeys --poll-rc
 \cp -r scripts/ /home/cesar/
 \cp -r programs/ /home/cesar/
 
+# Replace keybindings
+sudo \cp keyd.cfg /etc/keyd/default.cfg
+
 echo ""
 echo "########################################"
 echo "#          All files replaced          #"
 echo "########################################"
 echo ""
+
+# Compile dwm
+\cd ~/programs/dwm/
+sudo make clean install
+
+# Rebind keyboard
+sudo systemctl restart keyd
