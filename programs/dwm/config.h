@@ -60,7 +60,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODALT Mod1Mask
-#define MODSUP Mod4Mask
+//#define MODSUP Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODALT,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODALT|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -111,18 +111,18 @@ static Key keys[] = {
 	{ MODALT,                       XK_F5,     xrdb,           {.v = NULL } },
 
     // dwm status
-    { MODALT,                       XK_b,      togglebar,      {0} },
-	{ MODALT|ShiftMask,             XK_b,      togglealttag,   {0} },
+    { MODALT,                       XK_d,      togglebar,      {0} },
+	{ MODALT|ShiftMask,             XK_d,      togglealttag,   {0} },
 
     // Gaps
 	{ MODALT,                       XK_z,      setgaps,        {.i = -1 } },
 	{ MODALT|ShiftMask,             XK_z,      setgaps,        {.i = +1 } },
 
     // Change layouts
-    { MODSUP,                       XK_u,      setlayout,      {.v = &layouts[0]} },
-    { MODSUP,                       XK_i,      setlayout,      {.v = &layouts[2]} },
-    { MODSUP,                       XK_o,      setlayout,      {.v = &layouts[1]} },
-    { MODSUP,                       XK_p,      setlayout,      {.v = &layouts[3]} },
+    { MODALT,                       XK_q,      setlayout,      {.v = &layouts[0]} },
+    { MODALT,                       XK_w,      setlayout,      {.v = &layouts[2]} },
+    { MODALT,                       XK_e,      setlayout,      {.v = &layouts[1]} },
+    { MODALT,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 
     // Move through tags
     { MODALT,                       XK_Tab,    view,           {0} },
