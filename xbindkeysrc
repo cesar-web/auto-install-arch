@@ -51,9 +51,6 @@
 "alacritty -e bash ytfzf -l -s -m"
   Mod2+Mod5 + r
 
-"alacritty -e dash scripts/keybind/tmux/main.sh"
-  Mod2+Mod5 + t
-
 "alacritty -e ranger"
   Mod2+Mod5 + a
 
@@ -68,6 +65,9 @@
 
 "alacritty"
   Mod2+Mod5 + c
+
+"alacritty -e dash scripts/keybind/tmux/main.sh"
+  Mod2+Mod5 + v
 
 
 # FN (utilities)

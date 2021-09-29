@@ -266,9 +266,8 @@ let g:which_key_map.t.s = 'Spell'
 let g:which_key_map.t.w = 'Wrap'
 
 let g:which_key_map.w = { 'name' : "+Window" }
-let g:which_key_map.w.s = 'Split Down'
-let g:which_key_map.w.v = 'Split Side'
-let g:which_key_map.w.b = 'which_key_ignore'
+let g:which_key_map.w.m = 'Split Side'
+let g:which_key_map.w.M = 'Split Down'
 
 " ======================================================================
 " Auto commands

@@ -86,7 +86,7 @@ static Key keys[] = {
     { MODALT,                       XK_plus,   spawn,          {.v = termcmd } },
     { MODALT,                       XK_minus,  killclient,     {0} },
     { MODALT|ShiftMask,             XK_q,      killclient,     {0} },
-    { MODALT,                       XK_y,      togglescratch,  {.v = scratchpadcmd } },
+    { MODALT,                       XK_a,      togglescratch,  {.v = scratchpadcmd } },
 
     // Manipulate windows
 	{ MODALT,                       XK_j,      focusstack,     {.i = +1 } },
