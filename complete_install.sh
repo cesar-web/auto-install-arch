@@ -96,12 +96,12 @@ echo ""
 cd /home/cesar/auto-install-arch/
 
 # Replace home files
-\cp -v bashrc /home/cesar/.bashrc
-\cp -v zshrc /home/cesar/.zshrc
-\cp -v xinitrc /home/cesar/.xinitrc
-\cp -v tmux.conf /home/cesar/.tmux.conf
+\cp -v home/bashrc /home/cesar/.bashrc
+\cp -v home/zshrc /home/cesar/.zshrc
+\cp -v home/xinitrc /home/cesar/.xinitrc
+\cp -v home/tmux.conf /home/cesar/.tmux.conf
 
-\cp -v xbindkeysrc /home/cesar/.xbindkeysrc
+\cp -v home/xbindkeysrc /home/cesar/.xbindkeysrc
 xbindkeys --poll-rc
 
 # Replace directories
@@ -143,8 +143,11 @@ echo ""
 
 # Rebind keyboard
 cd /home/cesar/auto-install-arch/
-sudo \cp keyd.cfg /etc/keyd/default.cfg
+sudo \cp other/keyd.cfg /etc/keyd/default.cfg
 sudo systemctl restart keyd
+
+# Modify < key
+sudo \cp other/keyd.cfg /usr/share/X11/xkb/symbols/pc
 
 echo ""
 echo "########################################"

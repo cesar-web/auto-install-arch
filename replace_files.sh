@@ -16,8 +16,13 @@ xbindkeys --poll-rc
 \cp -r scripts/ /home/cesar/
 \cp -r programs/ /home/cesar/
 
-# Replace keybindings
-sudo \cp keyd.cfg /etc/keyd/default.cfg
+# Rebind keyboard
+cd /home/cesar/auto-install-arch/
+sudo \cp other/keyd.cfg /etc/keyd/default.cfg
+sudo systemctl restart keyd
+
+# Modify < key
+sudo \cp other/keyd.cfg /usr/share/X11/xkb/symbols/pc
 
 echo ""
 echo "########################################"
@@ -28,6 +33,3 @@ echo ""
 # Compile dwm
 \cd ~/programs/dwm/
 sudo make clean install
-
-# Rebind keyboard
-sudo systemctl restart keyd

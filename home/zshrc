@@ -84,7 +84,8 @@ bindkey "^[[3~" delete-char
 source ~/programs/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 zmodload zsh/complist
 
-bindkey '^j' down-line-or-select
+bindkey '^f' down-line-or-select
+bindkey '^j' down-line-or-history
 bindkey '^k' up-line-or-history
 bindkey '^h' history-incremental-search-backward
 

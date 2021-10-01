@@ -17,7 +17,7 @@ Plug 'tpope/vim-surround' " surround key [ cs([ ]
 Plug 'liuchengxu/vim-which-key' " menu popup after leader
 Plug 'jiangmiao/auto-pairs' " automatic ([{}]) close
 
-" fuzzy search
+" Fuzzy search
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -99,6 +99,12 @@ nnoremap N Nzz
 nnoremap <c-d> <c-d>zz
 nnoremap <c-d> <c-d>zz
 
+" Tab to indent
+nnoremap <Tab>   >>
+nnoremap <S-Tab> <<
+vnoremap <Tab>   >><Esc>gv
+vnoremap <S-Tab> <<<Esc>gv
+
 " Dont save these changes to register
 nnoremap c "_c
 nnoremap C "_C
@@ -112,6 +118,7 @@ nnoremap <Leader>tj :Goyo<CR>:set spell!<CR>:set wrap!<CR>:set linebreak!<CR>
 
 " Insert
 nnoremap <leader>id a<C-R>=strftime("%a %b %d %Y")<CR><ESC>
+nnoremap <leader>it a<C-R>=strftime("%H:%M")<CR><ESC>
 nnoremap <leader>ill aLorem ipsum dolor sit amet, consectetur adipiscing elit. <ESC>
 nnoremap <leader>ilp aLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non mi volutpat, tincidunt erat eget, scelerisque massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis massa tincidunt, efficitur metus sit amet, dignissim est. Maecenas sollicitudin, magna ac hendrerit rhoncus, mi turpis gravida lacus, eu iaculis enim lectus vel mauris. Aliquam et metus tincidunt, mollis erat id, venenatis risus. Sed elit ipsum, lobortis quis porttitor in, euismod in turpis. Vivamus sodales sagittis mi imperdiet dignissim. Etiam varius feugiat accumsan. Aliquam nulla ex, vulputate eget ullamcorper et, tincidunt quis justo. Maecenas pellentesque tincidunt porttitor. Aenean eget felis posuere ex sodales rhoncus. Curabitur finibus in massa eget laoreet. Nullam in tincidunt augue.<ESC>
 
@@ -120,9 +127,17 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
+nnoremap J 10jzz
+nnoremap K 10kzz
+vnoremap J 10jzz
+vnoremap K 10kzz
 
 " Turn off ex mode
 nnoremap Q <nop>
+
+" Increment and decrement numbers
+nnoremap <leader>+ <C-a>
+nnoremap <leader>- <C-x>
 
 " Save and close files
 nnoremap <leader>fs :w<CR>
@@ -233,6 +248,7 @@ let g:which_key_map.f.t = 'File Tree'
 
 let g:which_key_map.i = { 'name' : '+Insert' }
 let g:which_key_map.i.d = 'Date'
+let g:which_key_map.i.t = 'Time'
 
 let g:which_key_map.i.l = { 'name' : '+Lorem' }
 let g:which_key_map.i.l.l = 'Line'
@@ -269,6 +285,11 @@ let g:which_key_map.w = { 'name' : "+Window" }
 let g:which_key_map.w.m = 'Split Side'
 let g:which_key_map.w.M = 'Split Down'
 
+let g:which_key_map.h = 'Window ←'
+let g:which_key_map.j = 'Window ↓'
+let g:which_key_map.k = 'Window ↑'
+let g:which_key_map.l = 'Window →'
+
 " ======================================================================
 " Auto commands
 " ======================================================================
@@ -277,11 +298,11 @@ let g:which_key_map.w.M = 'Split Down'
 autocmd Filetype dart nnoremap <leader>fs :DartFmt<CR>:w<CR>
 
 " Replace original files with git
-autocmd BufWritePost bashrc :!cp ~/auto-install-arch/bashrc ~/.bashrc
-autocmd BufWritePost tmux.conf :!cp ~/auto-install-arch/tmux.conf ~/.tmux.conf
-autocmd BufWritePost xbindkeysrc :!cp ~/auto-install-arch/xbindkeysrc ~/.xbindkeysrc
-autocmd BufWritePost xinitrc :!cp ~/auto-install-arch/xinitrc ~/.xinitrc
-autocmd BufWritePost zshrc :!cp ~/auto-install-arch/zshrc ~/.zshrc
+autocmd BufWritePost ~/auto-install-arch/home/bashrc :!cp ~/auto-install-arch/bashrc ~/.bashrc
+autocmd BufWritePost ~/auto-install-arch/home/tmux.conf :!cp ~/auto-install-arch/tmux.conf ~/.tmux.conf
+autocmd BufWritePost ~/auto-install-arch/home/xbindkeysrc :!cp ~/auto-install-arch/xbindkeysrc ~/.xbindkeysrc
+autocmd BufWritePost ~/auto-install-arch/home/xinitrc :!cp ~/auto-install-arch/xinitrc ~/.xinitrc
+autocmd BufWritePost ~/auto-install-arch/home/zshrc :!cp ~/auto-install-arch/zshrc ~/.zshrc
 autocmd BufWritePost ~/auto-install-arch/scripts/**/*.sh :!cp -r ~/auto-install-arch/scripts ~
 autocmd BufWritePost ~/auto-install-arch/programs/**/* :!cp -r ~/auto-install-arch/programs ~
 autocmd BufWritePost ~/auto-install-arch/.config/**/* :!cp -r ~/auto-install-arch/.config ~
@@ -295,7 +316,7 @@ autocmd BufWritePre * %s/\s\+$//e
 " Equalize splits when vim is resized
 autocmd VimResized * wincmd =
 
-" disable auto comments on a new line
+" Disable auto comments on a new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " ======================================================================

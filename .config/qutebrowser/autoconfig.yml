@@ -33,7 +33,7 @@ settings:
   completion.timestamp_format:
     global: '%Y-%m-%d %H:%M'
   completion.web_history.max_items:
-    global: 0
+    global: 1
   content.autoplay:
     global: false
   content.javascript.enabled:

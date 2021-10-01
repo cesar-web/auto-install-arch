@@ -83,7 +83,6 @@ static Key keys[] = {
 
     // Lanuch programs (most of the programs are in xbindkeysrc)
     { MODALT,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODALT,                       XK_plus,   spawn,          {.v = termcmd } },
     { MODALT,                       XK_minus,  killclient,     {0} },
     { MODALT|ShiftMask,             XK_q,      killclient,     {0} },
     { MODALT,                       XK_a,      togglescratch,  {.v = scratchpadcmd } },
