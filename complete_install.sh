@@ -62,11 +62,13 @@ sudo pacman -S man                       --noconfirm # Manuals form commands
 sudo pacman -S neofetch                  --noconfirm # Show system info
 sudo pacman -S tree                      --noconfirm # Show files in a tree structure
 
+# Dependencies
+sudo pacman -S jq                        --noconfirm # ytfzf
+sudo pacman -S ueberzug                  --noconfirm # ytfzf
+
 # AUR software
 yay -S devour                            --noconfirm # Swallow windows
 yay -S ytfzf                             --noconfirm # YouTube from the terminal
-sudo pacman -S jq                        --noconfirm # ytfzf dependency
-sudo pacman -S ueberzug                  --noconfirm # ytfzf dependency
 yay -S pacmixer                          --noconfirm # Sound manager
 yay -S htop-vim                          --noconfirm # View system processes
 yay -S keyd-git                          --noconfirm # Rebind keyboad
@@ -147,7 +149,7 @@ sudo \cp other/keyd.cfg /etc/keyd/default.cfg
 sudo systemctl restart keyd
 
 # Modify < key
-sudo \cp other/keyd.cfg /usr/share/X11/xkb/symbols/pc
+sudo \cp other/x11keys /usr/share/X11/xkb/symbols/pc
 
 echo ""
 echo "########################################"

@@ -63,6 +63,9 @@
 "alacritty -e dash /home/cesar/scripts/keybind/find_file/main.sh"
   Mod2+Mod5 + f
 
+"alacritty -e dash /home/cesar/scripts/general/open_config.sh"
+  Mod2+Mod5 + g
+
 "alacritty"
   Mod2+Mod5 + c
 

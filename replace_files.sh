@@ -22,7 +22,7 @@ sudo \cp other/keyd.cfg /etc/keyd/default.cfg
 sudo systemctl restart keyd
 
 # Modify < key
-sudo \cp other/keyd.cfg /usr/share/X11/xkb/symbols/pc
+sudo \cp other/x11keys /usr/share/X11/xkb/symbols/pc
 
 echo ""
 echo "########################################"

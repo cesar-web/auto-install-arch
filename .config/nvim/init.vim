@@ -298,11 +298,11 @@ let g:which_key_map.l = 'Window →'
 autocmd Filetype dart nnoremap <leader>fs :DartFmt<CR>:w<CR>
 
 " Replace original files with git
-autocmd BufWritePost ~/auto-install-arch/home/bashrc :!cp ~/auto-install-arch/bashrc ~/.bashrc
-autocmd BufWritePost ~/auto-install-arch/home/tmux.conf :!cp ~/auto-install-arch/tmux.conf ~/.tmux.conf
-autocmd BufWritePost ~/auto-install-arch/home/xbindkeysrc :!cp ~/auto-install-arch/xbindkeysrc ~/.xbindkeysrc
-autocmd BufWritePost ~/auto-install-arch/home/xinitrc :!cp ~/auto-install-arch/xinitrc ~/.xinitrc
-autocmd BufWritePost ~/auto-install-arch/home/zshrc :!cp ~/auto-install-arch/zshrc ~/.zshrc
+autocmd BufWritePost ~/auto-install-arch/home/bashrc :!cp ~/auto-install-arch/home/bashrc ~/.bashrc
+autocmd BufWritePost ~/auto-install-arch/home/tmux.conf :!cp ~/auto-install-arch/home/tmux.conf ~/.tmux.conf
+autocmd BufWritePost ~/auto-install-arch/home/xbindkeysrc :!cp ~/auto-install-arch/home/xbindkeysrc ~/.xbindkeysrc
+autocmd BufWritePost ~/auto-install-arch/home/xinitrc :!cp ~/auto-install-arch/home/xinitrc ~/.xinitrc
+autocmd BufWritePost ~/auto-install-arch/home/zshrc :!cp ~/auto-install-arch/home/zshrc ~/.zshrc
 autocmd BufWritePost ~/auto-install-arch/scripts/**/*.sh :!cp -r ~/auto-install-arch/scripts ~
 autocmd BufWritePost ~/auto-install-arch/programs/**/* :!cp -r ~/auto-install-arch/programs ~
 autocmd BufWritePost ~/auto-install-arch/.config/**/* :!cp -r ~/auto-install-arch/.config ~
