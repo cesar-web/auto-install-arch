@@ -107,12 +107,12 @@ alias py='python'
 alias o='dash ~/scripts/general/open_file.sh'
 
 # config files
-alias bind='nvim ~/auto-install-arch/xbindkeysrc'
-alias brc='nvim ~/auto-install-arch/bashrc'
+alias bind='nvim ~/auto-install-arch/home/xbindkeysrc'
+alias brc='nvim ~/auto-install-arch/home/bashrc'
 alias dwm='cd ~/auto-install-arch/programs/dwm/; pwd; ll; nvim config.h'
 alias ini='nvim ~/auto-install-arch/.config/nvim/init.vim'
-alias zrc='nvim ~/auto-install-arch/zshrc'
-alias tm='nvim ~/auto-install-arch/tmux.conf'
+alias zrc='nvim ~/auto-install-arch/home/zshrc'
+alias tm='nvim ~/auto-install-arch/home/tmux.conf'
 alias cnf='dash ~/scripts/general/open_config.sh'
 alias build='cd ~/auto-install-arch; dash replace_files.sh'
 

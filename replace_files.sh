@@ -3,12 +3,12 @@
 sudo echo "Replacing files"
 
 # Replace home files
-\cp bashrc /home/cesar/.bashrc
-\cp zshrc /home/cesar/.zshrc
-\cp xinitrc /home/cesar/.xinitrc
-\cp tmux.conf /home/cesar/.tmux.conf
+\cp home/bashrc /home/cesar/.bashrc
+\cp home/zshrc /home/cesar/.zshrc
+\cp home/xinitrc /home/cesar/.xinitrc
+\cp home/tmux.conf /home/cesar/.tmux.conf
 
-\cp xbindkeysrc /home/cesar/.xbindkeysrc
+\cp home/xbindkeysrc /home/cesar/.xbindkeysrc
 xbindkeys --poll-rc
 
 # Replace directories
