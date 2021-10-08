@@ -13,6 +13,7 @@ sudo pacman -S xdg-user-dirs             --noconfirm # Change names of default $
 sudo pacman -S alacritty                 --noconfirm # Terminal emulator
 sudo pacman -S tmux                      --noconfirm # Terminal multiplexer
 sudo pacman -S exa                       --noconfirm # A better ls
+sudo pacman -S bat                       --noconfirm # A better less
 
 # Shells
 sudo pacman -S dash                      --noconfirm # Fast shell for scripting
@@ -65,6 +66,13 @@ sudo pacman -S tree                      --noconfirm # Show files in a tree stru
 # Dependencies
 sudo pacman -S jq                        --noconfirm # ytfzf
 sudo pacman -S ueberzug                  --noconfirm # ytfzf
+
+# Install yay
+cd /opt
+sudo git clone https://aur.archlinux.org/yay.git
+sudo chown -R cesar:users ./yay
+cd yay
+makepkg -si --noconfirm
 
 # AUR software
 yay -S devour                            --noconfirm # Swallow windows
