@@ -85,7 +85,7 @@ static Key keys[] = {
     { MODALT,                       XK_Return, spawn,          {.v = termcmd } },
     { MODALT,                       XK_minus,  killclient,     {0} },
     { MODALT|ShiftMask,             XK_q,      killclient,     {0} },
-    { MODALT,                       XK_a,      togglescratch,  {.v = scratchpadcmd } },
+    { MODALT,                       XK_a,      setlayout,      {0} },
 
     // Manipulate windows
 	{ MODALT,                       XK_j,      focusstack,     {.i = +1 } },
@@ -98,7 +98,7 @@ static Key keys[] = {
 	{ MODALT,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODALT|ShiftMask,             XK_Return, zoom,           {0} },
 
-	{ MODALT,                       XK_space,  setlayout,      {0} },
+    { MODALT,                       XK_space,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODALT|ShiftMask,             XK_space,  togglesticky,   {0} },
 	{ MODALT,                       XK_f,      togglefullscr,  {0} },
 
