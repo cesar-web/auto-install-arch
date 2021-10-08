@@ -123,6 +123,7 @@ alias mkdir='mkdir -vp'
 alias du='du -h'
 alias df='df -h'
 alias less='bat --theme=gruvbox-dark'
+#alias tmux='dash ~/scripts/keybind/tmux/main.sh'
 
 # give terminal color
 alias ip='ip -c=always'

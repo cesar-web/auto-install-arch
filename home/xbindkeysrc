@@ -48,10 +48,10 @@
 "alacritty -e htop"
   Mod2+Mod5 + e
 
-"alacritty -e bash ytfzf -l -s -m"
+"alacritty -e dash scripts/tmux/create-music.sh"
   Mod2+Mod5 + r
 
-"alacritty -e ranger"
+"alacritty -e dash scripts/tmux/create-fmanager.sh"
   Mod2+Mod5 + a
 
 "alacritty -e pacmixer"
@@ -60,16 +60,16 @@
 "rofi -show drun -show-icons -matching prefix -theme gruvbox-dark-hard -terminal alacritty"
   Mod2+Mod5 + d
 
-"alacritty -e dash /home/cesar/scripts/keybind/find_file/main.sh"
+"alacritty -e dash scripts/keybind/find_file/main.sh"
   Mod2+Mod5 + f
 
-"alacritty -e dash /home/cesar/scripts/general/open_config.sh"
+"alacritty -e dash scripts/general/open_config.sh"
   Mod2+Mod5 + g
 
 "alacritty"
   Mod2+Mod5 + c
 
-"alacritty -e dash scripts/keybind/tmux/main.sh"
+"alacritty -e dash scripts/tmux/create-default.sh"
   Mod2+Mod5 + v
 
 
@@ -81,7 +81,7 @@
   Alt+Mod2 + s
 
 # Open clipboard history
-"alacritty -e dash /home/cesar/scripts/keybind/clipmenu/main.sh"
+"alacritty -e dash scripts/keybind/clipmenu/main.sh"
   Alt+Mod2 + c
 
 

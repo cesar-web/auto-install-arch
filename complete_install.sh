@@ -54,7 +54,7 @@ sudo pacman -S unrar                     --noconfirm # Extract files
 sudo pacman -S unzip                     --noconfirm # Extract files
 
 # GUI software
-sudo pacman -S pcmanfm                   --noconfirm # File manager
+sudo pacman -S nautilus                  --noconfirm # File manager
 sudo pacman -S gnome-disk-utility        --noconfirm # View connected usb devices
 
 # Other software
@@ -129,10 +129,6 @@ echo ""
 cd /home/cesar/programs/dwm/
 sudo make clean install
 
-# Build st
-cd /home/cesar/programs/st/
-sudo make clean install
-
 echo ""
 echo "########################################"
 echo "#             DWM compiled             #"
@@ -140,7 +136,7 @@ echo "########################################"
 echo ""
 
 # ==================================================
-# Install window manager and st
+# Rebind keyboard
 # ==================================================
 
 # Rebind keyboard

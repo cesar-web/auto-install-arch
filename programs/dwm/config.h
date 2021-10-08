@@ -75,7 +75,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -131,7 +131,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_i,                      1)
 	TAGKEYS(                        XK_o,                      2)
     TAGKEYS(                        XK_p,                      3)
-	{ MODALT|ShiftMask|ControlMask, XK_x,      quit,           {0} },
+	{ MODALT|ControlMask,           XK_x,      quit,           {0} },
 };
 
 /* button definitions */

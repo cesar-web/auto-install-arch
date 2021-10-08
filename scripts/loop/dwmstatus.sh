@@ -17,6 +17,12 @@ while true; do
     # Keyboard
     #statusbar+=$(printf "%s | " "$(setxkbmap -query | awk '/layout/{print $2}')")
 
+    # Show tasks to be completed if amount > 0
+    TASK=$(wc -l ~/documents/todo | awk '{print $1}')
+    if [ $TASK -gt 0 ]; then
+        statusbar+=$(printf "TODO %s | " "$TASK")
+    fi
+
     # Date and time
     statusbar+=$(printf "%s" "$(date "+%a %B %d | %I:%M:%S ")")
 

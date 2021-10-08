@@ -8,10 +8,10 @@ case "$file" in
     "zshrc")       nvim ~/auto-install-arch/home/zshrc                 ;;
     "xinitrc")     nvim ~/auto-install-arch/home/xinitrc               ;;
     "xbindkeysrc") nvim ~/auto-install-arch/home/xbindkeysrc           ;;
-    "keybinds")    nvim ~/auto-install-arch/other/keyd.cfg              ;;
-    "notes")       nvim ~/documents/text_files/notes              ;;
-    "todo")        nvim ~/documents/text_files/TODO               ;;
-    "vim.init")    nvim ~/auto-install-arch/.config/nvim/init.vim ;;
+    "keybinds")    nvim ~/auto-install-arch/other/keyd.cfg             ;;
+    "notes")       nvim ~/documents/notes                              ;;
+    "todo")        nvim ~/documents/todo                               ;;
+    "vim.init")    nvim ~/auto-install-arch/.config/nvim/init.vim      ;;
     "scripts->")
         cd ~/auto-install-arch/scripts/
         script=$(find . -type f | fzf \

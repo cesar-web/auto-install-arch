@@ -118,7 +118,7 @@ nnoremap <Leader>tj :Goyo<CR>:set spell!<CR>:set wrap!<CR>:set linebreak!<CR>
 
 " Insert
 nnoremap <leader>id a<C-R>=strftime("%a %b %d %Y")<CR><ESC>
-nnoremap <leader>it a<C-R>=strftime("%H:%M")<CR><ESC>
+nnoremap <leader>it a<C-R>=strftime("%A %H:%M")<CR><ESC>
 nnoremap <leader>ill aLorem ipsum dolor sit amet, consectetur adipiscing elit. <ESC>
 nnoremap <leader>ilp aLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non mi volutpat, tincidunt erat eget, scelerisque massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris quis massa tincidunt, efficitur metus sit amet, dignissim est. Maecenas sollicitudin, magna ac hendrerit rhoncus, mi turpis gravida lacus, eu iaculis enim lectus vel mauris. Aliquam et metus tincidunt, mollis erat id, venenatis risus. Sed elit ipsum, lobortis quis porttitor in, euismod in turpis. Vivamus sodales sagittis mi imperdiet dignissim. Etiam varius feugiat accumsan. Aliquam nulla ex, vulputate eget ullamcorper et, tincidunt quis justo. Maecenas pellentesque tincidunt porttitor. Aenean eget felis posuere ex sodales rhoncus. Curabitur finibus in massa eget laoreet. Nullam in tincidunt augue.<ESC>
 
@@ -127,10 +127,10 @@ nnoremap H ^
 nnoremap L $
 vnoremap H ^
 vnoremap L $
-nnoremap J 10jzz
-nnoremap K 10kzz
-vnoremap J 10jzz
-vnoremap K 10kzz
+nnoremap J }
+nnoremap K {
+vnoremap J }
+vnoremap K {
 
 " Turn off ex mode
 nnoremap Q <nop>
@@ -177,8 +177,8 @@ nnoremap <C-j> :m.+1<CR>==
 nnoremap <C-k> :m.-2<CR>==
 
 " Manage splits
-nnoremap <leader>wm :vsp<CR>
-nnoremap <leader>wM :sp<CR>
+nnoremap <leader>w :vsp<CR>
+nnoremap <leader>W :sp<CR>
 
 " Move between splits
 nnoremap <leader>h <C-w>h
@@ -281,9 +281,8 @@ let g:which_key_map.t.p = 'Paste'
 let g:which_key_map.t.s = 'Spell'
 let g:which_key_map.t.w = 'Wrap'
 
-let g:which_key_map.w = { 'name' : "+Window" }
-let g:which_key_map.w.m = 'Split Side'
-let g:which_key_map.w.M = 'Split Down'
+let g:which_key_map.w = "Split Right"
+let g:which_key_map.W = "Split Down"
 
 let g:which_key_map.h = 'Window ←'
 let g:which_key_map.j = 'Window ↓'
@@ -293,6 +292,9 @@ let g:which_key_map.l = 'Window →'
 " ======================================================================
 " Auto commands
 " ======================================================================
+
+" Remove trailing white space when saving
+autocmd BufWritePre * %s/\s\+$//e
 
 " Format dart code on save
 autocmd Filetype dart nnoremap <leader>fs :DartFmt<CR>:w<CR>
@@ -309,9 +311,6 @@ autocmd BufWritePost ~/auto-install-arch/.config/**/* :!cp -r ~/auto-install-arc
 
 " Compile pandoc
 autocmd BufWritePost *.md :!pandoc % -o %:r.pdf
-
-" Remove trailing white space when saving
-autocmd BufWritePre * %s/\s\+$//e
 
 " Equalize splits when vim is resized
 autocmd VimResized * wincmd =
