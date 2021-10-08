@@ -106,18 +106,18 @@ echo ""
 cd /home/cesar/auto-install-arch/
 
 # Replace home files
-\cp -v home/bashrc /home/cesar/.bashrc
-\cp -v home/zshrc /home/cesar/.zshrc
-\cp -v home/xinitrc /home/cesar/.xinitrc
-\cp -v home/tmux.conf /home/cesar/.tmux.conf
+\cp -p -v home/bashrc /home/cesar/.bashrc
+\cp -p -v home/zshrc /home/cesar/.zshrc
+\cp -p -v home/xinitrc /home/cesar/.xinitrc
+\cp -p -v home/tmux.conf /home/cesar/.tmux.conf
 
-\cp -v home/xbindkeysrc /home/cesar/.xbindkeysrc
+\cp -p -v home/xbindkeysrc /home/cesar/.xbindkeysrc
 xbindkeys --poll-rc
 
 # Replace directories
-\cp -v -r .config/ /home/cesar/
-\cp -v -r scripts/ /home/cesar/
-\cp -v -r programs/ /home/cesar/
+\cp -p -v -r .config/ /home/cesar/
+\cp -p -v -r scripts/ /home/cesar/
+\cp -p -v -r programs/ /home/cesar/
 
 # Install VimPlug for Neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -149,11 +149,11 @@ echo ""
 
 # Rebind keyboard
 cd /home/cesar/auto-install-arch/
-sudo \cp other/keyd.cfg /etc/keyd/default.cfg
-sudo systemctl restart keyd
+sudo mkdir /etc/keyd
+sudo \cp -p other/keyd.cfg /etc/keyd/default.cfg
 
 # Modify < key
-sudo \cp other/x11keys /usr/share/X11/xkb/symbols/pc
+sudo \cp -p other/x11keys /usr/share/X11/xkb/symbols/pc
 
 echo ""
 echo "########################################"
