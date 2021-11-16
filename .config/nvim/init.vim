@@ -160,6 +160,10 @@ nnoremap <leader>ss z=
 nnoremap <leader>sle :set spelllang=en<CR>
 nnoremap <leader>sls :set spelllang=es<CR>
 
+" Notes and todo
+nnoremap <leader>gn :e ~/documents/notes<CR>
+nnoremap <leader>gt :e ~/documents/todo<CR>
+
 " Keep cursor centered while searching
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -245,6 +249,10 @@ let g:which_key_map.f.h = 'Fuzzy Help'
 let g:which_key_map.f.o = 'File Open'
 let g:which_key_map.f.s = 'File Save'
 let g:which_key_map.f.t = 'File Tree'
+
+let g:which_key_map.g = { 'name' : '+Goto' }
+let g:which_key_map.g.n = 'Notes'
+let g:which_key_map.g.t = 'TODO'
 
 let g:which_key_map.i = { 'name' : '+Insert' }
 let g:which_key_map.i.d = 'Date'
